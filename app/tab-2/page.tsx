@@ -401,8 +401,448 @@ export default function Tab2() {
         </div>
       )}
 
-      {/* Scene 2 placeholder — implemented in Task 3 */}
-      {scene === 2 && null}
+      {/* Scene 2: Comfort Care Adjustment */}
+      {scene === 2 && (
+        <div>
+          <button
+            onClick={() => setScene(1)}
+            style={{ ...secondaryBtn, marginBottom: 16, fontSize: 13, padding: "6px 14px" }}
+          >
+            ← Back to dashboard
+          </button>
+
+          <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+            {/* Left: Patient Context */}
+            <div style={{ ...card, width: 300, flexShrink: 0 }}>
+              <h3
+                style={{
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--text-primary)",
+                  marginBottom: 16,
+                }}
+              >
+                Patient Context
+              </h3>
+              <div style={{ fontSize: 13, lineHeight: 1.8 }}>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>Name: </span>
+                  <span style={{ fontWeight: 500 }}>Dorothy Fletcher, 82</span>
+                </div>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>Setting: </span>
+                  <span style={{ fontWeight: 500 }}>
+                    {DOROTHY_DETAIL.careSettingDetail}
+                  </span>
+                </div>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>Diagnosis: </span>
+                  <span style={{ fontWeight: 500 }}>
+                    {DOROTHY_DETAIL.diagnosis}
+                  </span>
+                </div>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>ACP: </span>
+                  <span style={{ fontWeight: 500 }}>{DOROTHY_DETAIL.acp}</span>
+                </div>
+                <div style={{ marginTop: 12 }}>
+                  <span
+                    style={{
+                      color: "var(--text-secondary)",
+                      display: "block",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Medications:
+                  </span>
+                  {DOROTHY_DETAIL.medications.map((m, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        background: "var(--accent-subtle)",
+                        borderRadius: 6,
+                        padding: "4px 8px",
+                        fontSize: 12,
+                        color: "var(--accent)",
+                        fontWeight: 500,
+                        marginBottom: 4,
+                      }}
+                    >
+                      {m.name} {m.dosage} ({m.frequency})
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginTop: 8 }}>
+                  <span style={{ color: "var(--text-secondary)" }}>RPM: </span>
+                  <span style={{ fontWeight: 500 }}>{DOROTHY_DETAIL.rpm}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Triage View */}
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+              }}
+            >
+              {/* Trend Summary */}
+              <div style={card}>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 16,
+                  }}
+                >
+                  Symptom Trends (4 days)
+                </h3>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 12,
+                  }}
+                >
+                  {/* Pain Score */}
+                  <div
+                    style={{
+                      background: "var(--bg-hover)",
+                      borderRadius: 8,
+                      padding: 12,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: "var(--text-secondary)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Pain Score
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                      }}
+                    >
+                      {DOROTHY_DETAIL.trends.map((t, i) => (
+                        <div key={i} style={{ textAlign: "center", flex: 1 }}>
+                          <div
+                            style={{
+                              width: 32,
+                              height: 32,
+                              borderRadius: "50%",
+                              background:
+                                t.painScore >= 5 ? "#fef2f2" : "var(--bg-surface)",
+                              border: `2px solid ${t.painScore >= 5 ? "#dc3545" : "#f59e0b"}`,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: 13,
+                              fontWeight: 600,
+                              color: t.painScore >= 5 ? "#dc3545" : "#f59e0b",
+                              margin: "0 auto 4px",
+                            }}
+                          >
+                            {t.painScore}
+                          </div>
+                          <div
+                            style={{ fontSize: 10, color: "var(--text-muted)" }}
+                          >
+                            {t.day}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Appetite */}
+                  <div
+                    style={{
+                      background: "var(--bg-hover)",
+                      borderRadius: 8,
+                      padding: 12,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: "var(--text-secondary)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Appetite
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                      }}
+                    >
+                      {DOROTHY_DETAIL.trends.map((t, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            fontSize: 12,
+                          }}
+                        >
+                          <span style={{ color: "var(--text-muted)" }}>
+                            {t.day}
+                          </span>
+                          <span
+                            style={{
+                              fontWeight: 500,
+                              color:
+                                t.appetite === "Poor"
+                                  ? "#dc3545"
+                                  : t.appetite === "Reduced"
+                                    ? "#f59e0b"
+                                    : "var(--text-primary)",
+                            }}
+                          >
+                            {t.appetite}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* SpO2 */}
+                  <div
+                    style={{
+                      background: "var(--bg-hover)",
+                      borderRadius: 8,
+                      padding: 12,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: "var(--text-secondary)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      SpO2
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                      }}
+                    >
+                      {DOROTHY_DETAIL.trends.map((t, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            fontSize: 12,
+                          }}
+                        >
+                          <span style={{ color: "var(--text-muted)" }}>
+                            {t.day}
+                          </span>
+                          <span
+                            style={{
+                              fontWeight: 500,
+                              color: "var(--text-primary)",
+                            }}
+                          >
+                            {t.spO2}%
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 11,
+                        color: "var(--text-muted)",
+                        marginTop: 4,
+                        fontStyle: "italic",
+                      }}
+                    >
+                      Within expected COPD baseline
+                    </div>
+                  </div>
+
+                  {/* Mobility */}
+                  <div
+                    style={{
+                      background: "var(--bg-hover)",
+                      borderRadius: 8,
+                      padding: 12,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: "var(--text-secondary)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Mobility
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                      }}
+                    >
+                      {DOROTHY_DETAIL.trends.map((t, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            fontSize: 12,
+                          }}
+                        >
+                          <span style={{ color: "var(--text-muted)" }}>
+                            {t.day}
+                          </span>
+                          <span
+                            style={{
+                              fontWeight: 500,
+                              color: t.mobility.includes("bed")
+                                ? "#dc3545"
+                                : "var(--text-primary)",
+                            }}
+                          >
+                            {t.mobility}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Co-Pilot Reasoning */}
+              <div
+                style={{
+                  ...card,
+                  borderLeft: "4px solid #f59e0b",
+                  background: "#fffbeb",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color: "#92400e",
+                    marginBottom: 8,
+                  }}
+                >
+                  Co-Pilot Assessment
+                </div>
+                <p style={{ fontSize: 14, color: "#78350f", lineHeight: 1.6 }}>
+                  {DOROTHY_DETAIL.reasoning}
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                }}
+              >
+                {DOROTHY_DETAIL.actions.map((action) => (
+                  <div key={action.id} style={card}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: 12,
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 600,
+                          color: "var(--text-primary)",
+                        }}
+                      >
+                        {action.label}
+                      </h4>
+                      {approvedActions[action.id] ? (
+                        <span
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: "#22c55e",
+                          }}
+                        >
+                          Sent ✓
+                        </span>
+                      ) : (
+                        <button
+                          onClick={() => handleApproveAction(action.id)}
+                          disabled={processingAction !== null}
+                          style={{
+                            ...primaryBtn,
+                            padding: "6px 14px",
+                            fontSize: 12,
+                            opacity: processingAction !== null ? 0.6 : 1,
+                          }}
+                        >
+                          {processingAction === action.id
+                            ? "Sending..."
+                            : "Approve"}
+                        </button>
+                      )}
+                    </div>
+                    <div
+                      style={{
+                        background: "var(--bg-hover)",
+                        borderRadius: 8,
+                        padding: 12,
+                        fontSize: 13,
+                        color: "var(--text-secondary)",
+                        lineHeight: 1.6,
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {action.content}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Continue to Scene 3 */}
+              {DOROTHY_DETAIL.actions.every(
+                (a) => approvedActions[a.id]
+              ) && (
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <button
+                    onClick={() => advanceToScene(3)}
+                    style={primaryBtn}
+                  >
+                    Continue to next alert →
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Scene 3 placeholder — implemented in Task 4 */}
       {scene === 3 && null}
