@@ -120,7 +120,7 @@ export function generateCarePlan(visit: VisitData): CarePlan {
 }
 
 export function getWelcomeMessage(visit: VisitData): string {
-  const firstName = visit.patientName.split(" ")[0]
+  const firstName = visit.patientName.split(" ")[0] || "there"
   return `Hi ${firstName}, I'm your PostVisit assistant. I have your care plan from Dr. Chen for managing your ${visit.diagnosis.toLowerCase()}. What questions do you have?`
 }
 
@@ -133,7 +133,7 @@ export const SUGGESTED_QUESTIONS = [
 
 export function getChatResponse(input: string, visit: VisitData): string {
   const lower = input.toLowerCase()
-  const firstName = visit.patientName.split(" ")[0]
+  const firstName = visit.patientName.split(" ")[0] || "there"
 
   if (lower.includes("side effect")) {
     const sideEffects = visit.medications
