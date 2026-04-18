@@ -194,34 +194,23 @@ export default function Tab2() {
               {PATIENTS.length} action cards
             </p>
             <div style={{ display: "flex", gap: 16 }}>
-              {(["green", "amber", "red"] as const).map((level) => {
-                const count = PATIENTS.filter(
-                  (p) => p.riskLevel === level
-                ).length
-                return (
-                  <span
-                    key={level}
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: RISK_COLORS[level],
-                    }}
-                  >
-                    {count} {level}
-                  </span>
-                )
-              })}
-              {PATIENTS.some((p) => p.acpWarning) && (
+              {[
+                { count: 22, label: "green", color: RISK_COLORS.green },
+                { count: 4, label: "amber", color: RISK_COLORS.amber },
+                { count: 2, label: "red", color: RISK_COLORS.red },
+                { count: 2, label: "no ACP", color: RISK_COLORS.red },
+              ].map((item) => (
                 <span
+                  key={item.label}
                   style={{
                     fontSize: 12,
                     fontWeight: 600,
-                    color: RISK_COLORS.red,
+                    color: item.color,
                   }}
                 >
-                  {PATIENTS.filter((p) => p.acpWarning).length} no ACP
+                  {item.count} {item.label}
                 </span>
-              )}
+              ))}
             </div>
           </div>
 
