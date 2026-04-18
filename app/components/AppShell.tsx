@@ -6,7 +6,7 @@ import Topbar from "./Topbar";
 
 const PAGE_TITLES: Record<string, string> = {
   "/": "Home",
-  "/tab-1": "Tab 1",
+  "/tab-1": "PostVisit.ai",
   "/tab-2": "Tab 2",
   "/tab-3": "Tab 3",
   "/tab-4": "Tab 4",
