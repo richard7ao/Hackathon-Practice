@@ -923,12 +923,217 @@ export default function Tab1() {
         </div>
       )}
 
-      {/* Step 4: placeholder */}
+      {/* Step 4: Adherence Dashboard */}
       {step === 4 && (
-        <div style={card}>
-          <p style={{ color: "var(--text-secondary)" }}>
-            Step 4 — Adherence Dashboard (coming next)
-          </p>
+        <div>
+          {/* Progress Header */}
+          <div
+            style={{
+              ...card,
+              marginBottom: 16,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: "var(--text-primary)",
+                  marginBottom: 4,
+                }}
+              >
+                Adherence Tracker
+              </h2>
+              <p style={{ fontSize: 13, color: "var(--text-secondary)" }}>
+                Day 3 of 14 — {visitData.patientName}&apos;s care plan
+              </p>
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <div
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--accent)",
+                }}
+              >
+                {(() => {
+                  const total = Object.values(adherence).flatMap((d) =>
+                    Object.values(d)
+                  )
+                  const checked = total.filter(Boolean).length
+                  return total.length
+                    ? Math.round((checked / total.length) * 100)
+                    : 0
+                })()}
+                %
+              </div>
+              <div
+                style={{
+                  fontSize: 11,
+                  color: "var(--text-secondary)",
+                  fontWeight: 500,
+                }}
+              >
+                Overall Adherence
+              </div>
+            </div>
+          </div>
+
+          {/* 7-Day Grid */}
+          <div style={{ ...card, marginBottom: 16, overflowX: "auto" }}>
+            <h3
+              style={{
+                fontSize: 15,
+                fontWeight: 600,
+                color: "var(--text-primary)",
+                marginBottom: 16,
+              }}
+            >
+              Weekly View
+            </h3>
+            <div style={{ display: "grid", gridTemplateColumns: `160px repeat(7, 1fr)`, gap: 0 }}>
+              {/* Header row */}
+              <div
+                style={{
+                  padding: "8px 12px",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: "var(--text-secondary)",
+                  borderBottom: "1px solid var(--border)",
+                }}
+              >
+                Task
+              </div>
+              {Array.from({ length: 7 }, (_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: "8px 4px",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color:
+                      i < 3
+                        ? "var(--accent)"
+                        : "var(--text-muted)",
+                    textAlign: "center",
+                    borderBottom: "1px solid var(--border)",
+                  }}
+                >
+                  Day {i + 1}
+                </div>
+              ))}
+
+              {/* Task rows */}
+              {adherenceTasks.flatMap((task) => [
+                <div
+                  key={`label-${task.id}`}
+                  style={{
+                    padding: "10px 12px",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: "var(--text-primary)",
+                    borderBottom: "1px solid var(--border)",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {task.label}
+                </div>,
+                ...Array.from({ length: 7 }, (_, i) => {
+                  const dayKey = `day-${i + 1}`
+                  const checked = adherence[dayKey]?.[task.id] ?? false
+                  return (
+                    <div
+                      key={`${task.id}-${i}`}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderBottom: "1px solid var(--border)",
+                        padding: "10px 4px",
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => toggleAdherence(dayKey, task.id)}
+                        style={{
+                          width: 18,
+                          height: 18,
+                          cursor: "pointer",
+                          accentColor: "var(--accent)",
+                        }}
+                      />
+                    </div>
+                  )
+                }),
+              ])}
+            </div>
+          </div>
+
+          {/* AI Nudges */}
+          <div style={card}>
+            <h3
+              style={{
+                fontSize: 15,
+                fontWeight: 600,
+                color: "var(--text-primary)",
+                marginBottom: 12,
+              }}
+            >
+              AI Nudges
+            </h3>
+            <p
+              style={{
+                fontSize: 12,
+                color: "var(--text-secondary)",
+                marginBottom: 16,
+              }}
+            >
+              Automated reminders the agent would send to{" "}
+              {visitData.patientName.split(" ")[0]}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {AI_NUDGES.map((nudge, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "12px 16px",
+                    background: "var(--bg-hover)",
+                    borderRadius: 8,
+                  }}
+                >
+                  <span style={{ fontSize: 20 }}>{nudge.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <div
+                      style={{
+                        fontSize: 13,
+                        fontWeight: 500,
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      {nudge.text}
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "var(--text-muted)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {nudge.time}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
