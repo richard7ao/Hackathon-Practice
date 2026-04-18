@@ -121,7 +121,10 @@ export default function Tab1() {
   }
 
   function handleBack() {
-    if (step > 1) setStep(step - 1)
+    if (step > 1) {
+      if (step === 2) setIsGenerating(false)
+      setStep(step - 1)
+    }
   }
 
   function handleRestart() {
