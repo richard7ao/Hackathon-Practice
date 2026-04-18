@@ -722,12 +722,204 @@ export default function Tab1() {
         </div>
       )}
 
-      {/* Step 3: placeholder */}
+      {/* Step 3: Patient Chat */}
       {step === 3 && (
-        <div style={card}>
-          <p style={{ color: "var(--text-secondary)" }}>
-            Step 3 — Patient Chat (coming next)
-          </p>
+        <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+          {/* Patient Context Card */}
+          <div style={{ ...card, width: 280, flexShrink: 0 }}>
+            <h3
+              style={{
+                fontSize: 14,
+                fontWeight: 600,
+                color: "var(--text-primary)",
+                marginBottom: 16,
+              }}
+            >
+              Patient Context
+            </h3>
+            <div style={{ fontSize: 13, lineHeight: 1.8 }}>
+              <div>
+                <span style={{ color: "var(--text-secondary)" }}>Name: </span>
+                <span style={{ fontWeight: 500 }}>
+                  {visitData.patientName}
+                </span>
+              </div>
+              <div>
+                <span style={{ color: "var(--text-secondary)" }}>Age: </span>
+                <span style={{ fontWeight: 500 }}>{visitData.age}</span>
+              </div>
+              <div>
+                <span style={{ color: "var(--text-secondary)" }}>
+                  Diagnosis:{" "}
+                </span>
+                <span style={{ fontWeight: 500 }}>
+                  {visitData.diagnosis}
+                </span>
+              </div>
+              <div style={{ marginTop: 12 }}>
+                <span
+                  style={{
+                    color: "var(--text-secondary)",
+                    display: "block",
+                    marginBottom: 4,
+                  }}
+                >
+                  Active Medications:
+                </span>
+                {visitData.medications.map((m, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: "var(--accent-subtle)",
+                      borderRadius: 6,
+                      padding: "4px 8px",
+                      fontSize: 12,
+                      color: "var(--accent)",
+                      fontWeight: 500,
+                      marginBottom: 4,
+                    }}
+                  >
+                    {m.name} {m.dosage}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Chat Interface */}
+          <div style={{ ...card, flex: 1, display: "flex", flexDirection: "column", height: 500, padding: 0 }}>
+            {/* Messages */}
+            <div
+              style={{
+                flex: 1,
+                overflowY: "auto",
+                padding: 20,
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}
+            >
+              {chatMessages.map((msg, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "flex",
+                    justifyContent:
+                      msg.role === "user" ? "flex-end" : "flex-start",
+                  }}
+                >
+                  <div
+                    style={{
+                      maxWidth: "75%",
+                      padding: "10px 14px",
+                      borderRadius: 12,
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      whiteSpace: "pre-line",
+                      background:
+                        msg.role === "user"
+                          ? "var(--accent)"
+                          : "var(--bg-hover)",
+                      color:
+                        msg.role === "user"
+                          ? "#fff"
+                          : "var(--text-primary)",
+                    }}
+                  >
+                    {msg.content}
+                  </div>
+                </div>
+              ))}
+              {isTyping && (
+                <div style={{ display: "flex", justifyContent: "flex-start" }}>
+                  <div
+                    style={{
+                      padding: "10px 14px",
+                      borderRadius: 12,
+                      background: "var(--bg-hover)",
+                      color: "var(--text-muted)",
+                      fontSize: 13,
+                    }}
+                  >
+                    <style>{`@keyframes blink { 0%,60% { opacity:1 } 30% { opacity:0.3 } }`}</style>
+                    <span style={{ animation: "blink 1.4s infinite" }}>●</span>{" "}
+                    <span style={{ animation: "blink 1.4s infinite 0.2s" }}>
+                      ●
+                    </span>{" "}
+                    <span style={{ animation: "blink 1.4s infinite 0.4s" }}>
+                      ●
+                    </span>
+                  </div>
+                </div>
+              )}
+              <div ref={chatEndRef} />
+            </div>
+
+            {/* Suggested Questions */}
+            <div
+              style={{
+                padding: "0 20px 8px",
+                display: "flex",
+                gap: 8,
+                flexWrap: "wrap",
+              }}
+            >
+              {SUGGESTED_QUESTIONS.map((q) => (
+                <button
+                  key={q}
+                  onClick={() => handleSendMessage(q)}
+                  disabled={isTyping}
+                  style={{
+                    background: "var(--accent-subtle)",
+                    color: "var(--accent)",
+                    border: "none",
+                    borderRadius: 16,
+                    padding: "6px 12px",
+                    fontSize: 12,
+                    fontWeight: 500,
+                    cursor: isTyping ? "default" : "pointer",
+                    opacity: isTyping ? 0.5 : 1,
+                    fontFamily: "inherit",
+                  }}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+
+            {/* Input */}
+            <div
+              style={{
+                borderTop: "1px solid var(--border)",
+                padding: 12,
+                display: "flex",
+                gap: 8,
+              }}
+            >
+              <input
+                style={{ ...inputStyle, flex: 1 }}
+                placeholder="Ask a question about your care plan..."
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !isTyping)
+                    handleSendMessage(chatInput)
+                }}
+                disabled={isTyping}
+              />
+              <button
+                onClick={() => handleSendMessage(chatInput)}
+                disabled={isTyping || !chatInput.trim()}
+                style={{
+                  ...primaryBtn,
+                  padding: "8px 16px",
+                  opacity: isTyping || !chatInput.trim() ? 0.5 : 1,
+                }}
+              >
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
