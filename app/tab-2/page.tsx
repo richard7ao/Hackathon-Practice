@@ -844,8 +844,362 @@ export default function Tab2() {
         </div>
       )}
 
-      {/* Scene 3 placeholder — implemented in Task 4 */}
-      {scene === 3 && null}
+      {/* Scene 3: Family 999 Crisis */}
+      {scene === 3 && (
+        <div>
+          {/* Alert Banner */}
+          <div
+            style={{
+              background: "#dc3545",
+              color: "#fff",
+              borderRadius: 12,
+              padding: "16px 24px",
+              marginBottom: 16,
+              fontSize: 14,
+              fontWeight: 600,
+            }}
+          >
+            URGENT — Harold Nyong&apos;o, 89, Meadowbank Care Home. Family
+            called 999 — patient unresponsive. Ambulance dispatched (Cat 2).
+          </div>
+
+          <button
+            onClick={() => setScene(1)}
+            style={{ ...secondaryBtn, marginBottom: 16, fontSize: 13, padding: "6px 14px" }}
+          >
+            ← Back to dashboard
+          </button>
+
+          <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+            {/* Left: Patient Context */}
+            <div style={{ ...card, width: 300, flexShrink: 0 }}>
+              <h3
+                style={{
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--text-primary)",
+                  marginBottom: 16,
+                }}
+              >
+                Patient Context
+              </h3>
+              <div style={{ fontSize: 13, lineHeight: 1.8 }}>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>Name: </span>
+                  <span style={{ fontWeight: 500 }}>
+                    Harold Nyong&apos;o, 89
+                  </span>
+                </div>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>
+                    Setting:{" "}
+                  </span>
+                  <span style={{ fontWeight: 500 }}>
+                    {HAROLD_DETAIL.careSettingDetail}
+                  </span>
+                </div>
+                <div>
+                  <span style={{ color: "var(--text-secondary)" }}>
+                    Diagnosis:{" "}
+                  </span>
+                  <span style={{ fontWeight: 500 }}>
+                    {HAROLD_DETAIL.diagnosis}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: 8,
+                    background: "#fef2f2",
+                    borderRadius: 8,
+                    border: "1px solid #fecaca",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "#991b1b",
+                      fontSize: 12,
+                      fontWeight: 600,
+                    }}
+                  >
+                    ACP:{" "}
+                  </span>
+                  <span style={{ color: "#991b1b", fontSize: 12 }}>
+                    {HAROLD_DETAIL.acp}
+                  </span>
+                </div>
+                <div style={{ marginTop: 12 }}>
+                  <span
+                    style={{
+                      color: "var(--text-secondary)",
+                      display: "block",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Medications:
+                  </span>
+                  {HAROLD_DETAIL.medications.map((m, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        background: "var(--accent-subtle)",
+                        borderRadius: 6,
+                        padding: "4px 8px",
+                        fontSize: 12,
+                        color: "var(--accent)",
+                        fontWeight: 500,
+                        marginBottom: 4,
+                      }}
+                    >
+                      {m.name} {m.dosage} ({m.frequency})
+                    </div>
+                  ))}
+                </div>
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: 8,
+                    background: "#fef2f2",
+                    borderRadius: 8,
+                    fontSize: 12,
+                    color: "#991b1b",
+                    fontWeight: 500,
+                  }}
+                >
+                  {HAROLD_DETAIL.note}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Crisis View */}
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+              }}
+            >
+              {/* Timeline */}
+              <div style={card}>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 16,
+                  }}
+                >
+                  What Happened
+                </h3>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {HAROLD_DETAIL.timeline.map((event, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        gap: 12,
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: "var(--text-muted)",
+                          minWidth: 48,
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {event.time}
+                      </span>
+                      <div
+                        style={{
+                          width: 8,
+                          height: 8,
+                          borderRadius: "50%",
+                          background:
+                            i === HAROLD_DETAIL.timeline.length - 1
+                              ? "#dc3545"
+                              : "var(--border)",
+                          marginTop: 4,
+                          flexShrink: 0,
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: 13,
+                          color:
+                            i === HAROLD_DETAIL.timeline.length - 1
+                              ? "#dc3545"
+                              : "var(--text-primary)",
+                          fontWeight:
+                            i === HAROLD_DETAIL.timeline.length - 1
+                              ? 600
+                              : 400,
+                        }}
+                      >
+                        {event.description}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Co-Pilot Reasoning */}
+              <div
+                style={{
+                  ...card,
+                  borderLeft: "4px solid #dc3545",
+                  background: "#fef2f2",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color: "#991b1b",
+                    marginBottom: 8,
+                  }}
+                >
+                  Co-Pilot Assessment — URGENT
+                </div>
+                <p
+                  style={{ fontSize: 14, color: "#7f1d1d", lineHeight: 1.6 }}
+                >
+                  {HAROLD_DETAIL.reasoning}
+                </p>
+              </div>
+
+              {/* Actions or Completion Summary */}
+              {!HAROLD_DETAIL.actions.every(
+                (a) => approvedActions[a.id]
+              ) ? (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 12,
+                  }}
+                >
+                  {HAROLD_DETAIL.actions.map((action) => (
+                    <div key={action.id} style={card}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginBottom: 12,
+                        }}
+                      >
+                        <h4
+                          style={{
+                            fontSize: 14,
+                            fontWeight: 600,
+                            color: "var(--text-primary)",
+                          }}
+                        >
+                          {action.label}
+                        </h4>
+                        {approvedActions[action.id] ? (
+                          <span
+                            style={{
+                              fontSize: 13,
+                              fontWeight: 600,
+                              color: "#22c55e",
+                            }}
+                          >
+                            Sent ✓
+                          </span>
+                        ) : (
+                          <button
+                            onClick={() => handleApproveAction(action.id)}
+                            disabled={processingAction !== null}
+                            style={{
+                              ...primaryBtn,
+                              padding: "6px 14px",
+                              fontSize: 12,
+                              opacity:
+                                processingAction !== null ? 0.6 : 1,
+                            }}
+                          >
+                            {processingAction === action.id
+                              ? "Sending..."
+                              : "Approve"}
+                          </button>
+                        )}
+                      </div>
+                      <div
+                        style={{
+                          background: "var(--bg-hover)",
+                          borderRadius: 8,
+                          padding: 12,
+                          fontSize: 13,
+                          color: "var(--text-secondary)",
+                          lineHeight: 1.6,
+                          fontStyle: "italic",
+                        }}
+                      >
+                        {action.content}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div
+                  style={{
+                    ...card,
+                    borderLeft: "4px solid #22c55e",
+                    background: "#f0fdf4",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 700,
+                      color: "#166534",
+                      marginBottom: 8,
+                    }}
+                  >
+                    Crisis Managed
+                  </h3>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      color: "#15803d",
+                      lineHeight: 1.8,
+                    }}
+                  >
+                    <div>✓ ACP upheld</div>
+                    <div>✓ Ambulance service notified</div>
+                    <div>✓ Family contacted</div>
+                    <div>✓ Palliative nurse dispatched</div>
+                  </div>
+                  <div
+                    style={{ display: "flex", gap: 12, marginTop: 16 }}
+                  >
+                    <button
+                      onClick={() => setScene(1)}
+                      style={secondaryBtn}
+                    >
+                      Return to dashboard
+                    </button>
+                    <button onClick={handleRestart} style={primaryBtn}>
+                      Restart Demo
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
