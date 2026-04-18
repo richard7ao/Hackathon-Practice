@@ -136,7 +136,10 @@ export function getChatResponse(input: string, visit: VisitData): string {
   const firstName = visit.patientName.split(" ")[0]
 
   if (lower.includes("side effect")) {
-    return `Great question, ${firstName}. Here are the key side effects to watch for with your current medications:\n\n• Lisinopril: Dry cough, dizziness, elevated potassium. Avoid salt substitutes.\n• Metformin: Stomach upset, nausea (usually improves after 1-2 weeks). Take with food.\n• Amlodipine: Ankle swelling, flushing, headache.\n\nIf any of these become severe or persistent, contact Dr. Chen's office before your follow-up.`
+    const sideEffects = visit.medications
+      .map((m) => `• ${m.name}: ${MED_INSTRUCTIONS[m.name] || "Follow prescriber directions."}`)
+      .join("\n")
+    return `Great question, ${firstName}. Here are the key side effects to watch for with your current medications:\n\n${sideEffects}\n\nIf any of these become severe or persistent, contact Dr. Chen's office before your follow-up.`
   }
 
   if (
@@ -214,17 +217,17 @@ export function getDefaultAdherence(
 
 export const AI_NUDGES = [
   {
-    icon: "\uD83D\uDC8A",
+    icon: "💊",
     text: "Time for your evening Metformin",
     time: "6:00 PM",
   },
   {
-    icon: "\u2764\uFE0F",
+    icon: "❤️",
     text: "You haven't logged blood pressure today",
     time: "2:30 PM",
   },
   {
-    icon: "\uD83C\uDF89",
+    icon: "🎉",
     text: "Great job — 3 day streak on your walking goal!",
     time: "10:00 AM",
   },
