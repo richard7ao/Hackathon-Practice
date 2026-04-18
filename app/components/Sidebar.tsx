@@ -28,21 +28,21 @@ export default function Sidebar({ pathname }: SidebarProps) {
             <rect width="100" height="100" rx="22" fill="#5B4CC4" />
             <text
               x="50"
-              y="60"
+              y="58"
               textAnchor="middle"
               fill="white"
               fontFamily="'DM Sans', system-ui, sans-serif"
               fontWeight="800"
-              fontSize="36"
-              letterSpacing="-2"
+              fontSize="28"
+              letterSpacing="-1"
             >
-              PLP
+              HP
             </text>
             <rect x="20" y="70" width="60" height="3" rx="1.5" fill="white" opacity="0.5" />
           </svg>
         </div>
         <div className="sidebar-logo-name">
-          PLP<sup>Admin</sup>
+          Hackathon<sup>Practice</sup>
         </div>
       </Link>
 

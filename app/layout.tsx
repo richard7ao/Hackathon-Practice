@@ -11,8 +11,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PLP Admin",
-  description: "PLP Admin Dashboard",
+  title: "Hackathon Practice",
+  description: "Hackathon Practice Dashboard",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
