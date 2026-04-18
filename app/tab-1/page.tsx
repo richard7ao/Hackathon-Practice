@@ -437,12 +437,288 @@ export default function Tab1() {
         </div>
       )}
 
-      {/* Step 2: placeholder */}
+      {/* Step 2: AI-Generated Care Plan */}
       {step === 2 && (
         <div style={card}>
-          <p style={{ color: "var(--text-secondary)" }}>
-            Step 2 — Care Plan (coming next)
-          </p>
+          {isGenerating ? (
+            <div style={{ textAlign: "center", padding: "48px 0" }}>
+              <div
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  border: "3px solid var(--border)",
+                  borderTopColor: "var(--accent)",
+                  animation: "spin 0.8s linear infinite",
+                  margin: "0 auto 16px",
+                }}
+              />
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  fontSize: 14,
+                  fontWeight: 500,
+                }}
+              >
+                Analyzing visit data...
+              </p>
+              <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+            </div>
+          ) : carePlan ? (
+            <div>
+              <h2
+                style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: "var(--text-primary)",
+                  marginBottom: 4,
+                }}
+              >
+                Care Plan for {visitData.patientName}
+              </h2>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "var(--text-secondary)",
+                  marginBottom: 24,
+                }}
+              >
+                Generated based on visit summary — {visitData.diagnosis}
+              </p>
+
+              {/* Medication Schedule */}
+              <div style={{ marginBottom: 24 }}>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 12,
+                  }}
+                >
+                  Medication Schedule
+                </h3>
+                <div
+                  style={{
+                    border: "1px solid var(--border)",
+                    borderRadius: 8,
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr 80px 120px 1fr",
+                      background: "var(--bg-hover)",
+                      padding: "8px 12px",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "var(--text-secondary)",
+                      textTransform: "uppercase",
+                      letterSpacing: 0.5,
+                    }}
+                  >
+                    <span>Drug</span>
+                    <span>Dose</span>
+                    <span>Time</span>
+                    <span>Instructions</span>
+                  </div>
+                  {carePlan.medicationSchedule.map((med, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 80px 120px 1fr",
+                        padding: "10px 12px",
+                        fontSize: 14,
+                        borderTop: "1px solid var(--border)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      <span style={{ fontWeight: 500 }}>{med.drug}</span>
+                      <span>{med.dose}</span>
+                      <span>{med.timeOfDay}</span>
+                      <span style={{ color: "var(--text-secondary)" }}>
+                        {med.specialInstructions}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Daily Routine */}
+              <div style={{ marginBottom: 24 }}>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 12,
+                  }}
+                >
+                  Daily Routine
+                </h3>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr 1fr",
+                    gap: 12,
+                  }}
+                >
+                  {(
+                    ["morning", "afternoon", "evening"] as const
+                  ).map((period) => (
+                    <div
+                      key={period}
+                      style={{
+                        background: "var(--bg-hover)",
+                        borderRadius: 8,
+                        padding: 16,
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 600,
+                          color: "var(--accent)",
+                          textTransform: "capitalize",
+                          marginBottom: 8,
+                        }}
+                      >
+                        {period}
+                      </h4>
+                      {carePlan.dailyRoutine[period].map((item, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            fontSize: 13,
+                            color: "var(--text-primary)",
+                            padding: "4px 0",
+                            display: "flex",
+                            gap: 8,
+                          }}
+                        >
+                          <span style={{ color: "var(--text-muted)" }}>
+                            •
+                          </span>
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Warning Signs */}
+              <div style={{ marginBottom: 24 }}>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 12,
+                  }}
+                >
+                  Warning Signs
+                </h3>
+                <div
+                  style={{
+                    background: "#fef2f2",
+                    border: "1px solid #fecaca",
+                    borderRadius: 8,
+                    padding: 16,
+                  }}
+                >
+                  {carePlan.warningSigns.map((sign, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        fontSize: 13,
+                        color: "#991b1b",
+                        padding: "4px 0",
+                        display: "flex",
+                        gap: 8,
+                      }}
+                    >
+                      <span>⚠</span>
+                      {sign}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Follow-Up Timeline */}
+              <div>
+                <h3
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "var(--text-primary)",
+                    marginBottom: 12,
+                  }}
+                >
+                  Follow-Up Timeline
+                </h3>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 0,
+                    padding: "8px 0",
+                  }}
+                >
+                  {carePlan.timeline.map((event, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        flex: 1,
+                      }}
+                    >
+                      <div style={{ textAlign: "center", minWidth: 80 }}>
+                        <div
+                          style={{
+                            width: 12,
+                            height: 12,
+                            borderRadius: "50%",
+                            background: "var(--accent)",
+                            margin: "0 auto 6px",
+                          }}
+                        />
+                        <div
+                          style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: "var(--accent)",
+                          }}
+                        >
+                          Day {event.day}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: 11,
+                            color: "var(--text-secondary)",
+                          }}
+                        >
+                          {event.label}
+                        </div>
+                      </div>
+                      {i < carePlan.timeline.length - 1 && (
+                        <div
+                          style={{
+                            flex: 1,
+                            height: 2,
+                            background: "var(--border)",
+                          }}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       )}
 
