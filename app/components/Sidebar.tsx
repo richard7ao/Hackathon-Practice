@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
-  { href: "/tab-1", label: "Tab 1" },
+  { href: "/tab-1", label: "PostVisit.ai" },
   { href: "/tab-2", label: "Tab 2" },
   { href: "/tab-3", label: "Tab 3" },
   { href: "/tab-4", label: "Tab 4" },
