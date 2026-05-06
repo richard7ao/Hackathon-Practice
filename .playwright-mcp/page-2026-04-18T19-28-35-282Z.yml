@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "EoL Triage Co-Pilot" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: EoL Triage Co-Pilot
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: EoL Triage Co-Pilot
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: ✓
+            - generic [ref=e34]: Morning Inbox
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: "2"
+            - generic [ref=e39]: Comfort Care
+          - generic [ref=e42]:
+            - generic [ref=e43]: "3"
+            - generic [ref=e44]: 999 Crisis
+        - generic [ref=e150]:
+          - button "← Back to dashboard" [ref=e151] [cursor=pointer]
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - heading "Patient Context" [level=3] [ref=e154]
+              - generic [ref=e155]:
+                - generic [ref=e156]: "Name: Dorothy Fletcher, 82"
+                - generic [ref=e157]: "Setting: Home (husband is primary carer)"
+                - generic [ref=e158]: "Diagnosis: Advanced COPD stage 4, comorbid anxiety"
+                - generic [ref=e159]: "ACP: Comfort-focused, no hospitalisation, DNACPR"
+                - generic [ref=e160]:
+                  - generic [ref=e161]: "Medications:"
+                  - generic [ref=e162]: Morphine sulfate 5mg (PRN)
+                  - generic [ref=e163]: Salbutamol inhaler 100mcg (As needed)
+                  - generic [ref=e164]: Lorazepam 0.5mg (PRN)
+                  - generic [ref=e165]: Paracetamol 1g (Four times daily)
+                - generic [ref=e166]: "RPM: Pulse oximeter, symptom check-in app"
+            - generic [ref=e167]:
+              - generic [ref=e168]:
+                - heading "Symptom Trends (4 days)" [level=3] [ref=e169]
+                - generic [ref=e170]:
+                  - generic [ref=e171]:
+                    - generic [ref=e172]: Pain Score
+                    - generic [ref=e173]:
+                      - generic [ref=e174]:
+                        - generic [ref=e175]: "3"
+                        - generic [ref=e176]: Mon
+                      - generic [ref=e177]:
+                        - generic [ref=e178]: "4"
+                        - generic [ref=e179]: Tue
+                      - generic [ref=e180]:
+                        - generic [ref=e181]: "5"
+                        - generic [ref=e182]: Wed
+                      - generic [ref=e183]:
+                        - generic [ref=e184]: "6"
+                        - generic [ref=e185]: Thu
+                  - generic [ref=e186]:
+                    - generic [ref=e187]: Appetite
+                    - generic [ref=e188]:
+                      - generic [ref=e189]:
+                        - generic [ref=e190]: Mon
+                        - generic [ref=e191]: Normal
+                      - generic [ref=e192]:
+                        - generic [ref=e193]: Tue
+                        - generic [ref=e194]: Normal
+                      - generic [ref=e195]:
+                        - generic [ref=e196]: Wed
+                        - generic [ref=e197]: Reduced
+                      - generic [ref=e198]:
+                        - generic [ref=e199]: Thu
+                        - generic [ref=e200]: Poor
+                  - generic [ref=e201]:
+                    - generic [ref=e202]: SpO2
+                    - generic [ref=e203]:
+                      - generic [ref=e204]:
+                        - generic [ref=e205]: Mon
+                        - generic [ref=e206]: 92%
+                      - generic [ref=e207]:
+                        - generic [ref=e208]: Tue
+                        - generic [ref=e209]: 91%
+                      - generic [ref=e210]:
+                        - generic [ref=e211]: Wed
+                        - generic [ref=e212]: 92%
+                      - generic [ref=e213]:
+                        - generic [ref=e214]: Thu
+                        - generic [ref=e215]: 91%
+                    - generic [ref=e216]: Within expected COPD baseline
+                  - generic [ref=e217]:
+                    - generic [ref=e218]: Mobility
+                    - generic [ref=e219]:
+                      - generic [ref=e220]:
+                        - generic [ref=e221]: Mon
+                        - generic [ref=e222]: Walked to shops with husband
+                      - generic [ref=e223]:
+                        - generic [ref=e224]: Tue
+                        - generic [ref=e225]: Walked to kitchen
+                      - generic [ref=e226]:
+                        - generic [ref=e227]: Wed
+                        - generic [ref=e228]: Moved around house
+                      - generic [ref=e229]:
+                        - generic [ref=e230]: Thu
+                        - generic [ref=e231]: Stayed in bed
+              - generic [ref=e232]:
+                - generic [ref=e233]: Co-Pilot Assessment
+                - paragraph [ref=e234]: "Rising pain with declining appetite and mobility suggests symptom burden increase. SpO2 stable — not an acute exacerbation. ACP is comfort-focused. Recommend: anticipatory medication review with GP to adjust pain management, and carer welfare check (husband is sole carer)."
+              - generic [ref=e235]:
+                - generic [ref=e236]:
+                  - generic [ref=e237]:
+                    - 'heading "Approve: Request GP medication review" [level=4] [ref=e238]'
+                    - generic [ref=e246]: Sent ✓
+                  - generic [ref=e240]: "Dr. Marsh — Dorothy Fletcher (DOB 12/03/1943), COPD stage 4. Pain trending 3→6 over 4 days, declining appetite and mobility. SpO2 stable. Currently on morphine 5mg PRN. Recommend review of pain management — consider scheduled dosing or dose increase. ACP: comfort-focused."
+                - generic [ref=e241]:
+                  - generic [ref=e242]:
+                    - 'heading "Approve: Schedule carer welfare call" [level=4] [ref=e243]'
+                    - button "Approve" [ref=e244] [cursor=pointer]
+                  - generic [ref=e245]: Hi Mr. Fletcher, this is Sarah from the community nursing team. I'd like to call today to check in on how things are going at home. Is 2pm convenient?
+  - button "Open Next.js Dev Tools" [ref=e141] [cursor=pointer]:
+    - img [ref=e142]
+  - alert [ref=e145]

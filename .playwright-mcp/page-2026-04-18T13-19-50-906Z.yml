@@ -1,0 +1,79 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "Tab 2" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: Tab 2
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: PostVisit.ai
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: ✓
+            - generic [ref=e34]: Visit Summary
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: ✓
+            - generic [ref=e39]: Care Plan
+          - generic [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: "3"
+            - generic [ref=e44]: Patient Chat
+          - generic [ref=e47]:
+            - generic [ref=e48]: "4"
+            - generic [ref=e49]: Adherence
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - heading "Patient Context" [level=3] [ref=e203]
+            - generic [ref=e204]:
+              - generic [ref=e205]: "Name: Maria Santos"
+              - generic [ref=e206]: "Age: 62"
+              - generic [ref=e207]:
+                - generic [ref=e208]: "Diagnosis:"
+                - text: Hypertension Stage 2, Type 2 Diabetes
+              - generic [ref=e209]:
+                - generic [ref=e210]: "Active Medications:"
+                - generic [ref=e211]: Lisinopril 10mg
+                - generic [ref=e212]: Metformin 500mg
+                - generic [ref=e213]: Amlodipine 5mg
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e217]: Hi Maria, I'm your PostVisit assistant. I have your care plan from Dr. Chen for managing your hypertension stage 2, type 2 diabetes. What questions do you have?
+              - generic [ref=e228]: Side effects?
+              - generic [ref=e230]: "Great question, Maria. Here are the key side effects to watch for with your current medications: • Lisinopril: Take on empty stomach. Avoid potassium supplements. • Metformin: Take with food to reduce stomach upset. • Amlodipine: May cause mild ankle swelling. Take at same time each day. If any of these become severe or persistent, contact Dr. Chen's office before your follow-up."
+            - generic [ref=e218]:
+              - button "Side effects?" [ref=e219] [cursor=pointer]
+              - button "What can I eat?" [ref=e220] [cursor=pointer]
+              - button "When should I worry?" [ref=e221] [cursor=pointer]
+              - button "My exercise plan" [ref=e222] [cursor=pointer]
+            - generic [ref=e223]:
+              - textbox "Ask a question about your care plan..." [ref=e224]
+              - button "Send" [disabled] [ref=e225] [cursor=pointer]
+        - generic [ref=e87]:
+          - button "← Back" [ref=e103] [cursor=pointer]
+          - button "View Adherence →" [ref=e226] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]:
+    - img [ref=e95]
+  - alert [ref=e98]

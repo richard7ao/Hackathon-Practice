@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "Tab 2" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: Tab 2
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: PostVisit.ai
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: ✓
+            - generic [ref=e34]: Visit Summary
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: "2"
+            - generic [ref=e39]: Care Plan
+          - generic [ref=e42]:
+            - generic [ref=e43]: "3"
+            - generic [ref=e44]: Patient Chat
+          - generic [ref=e47]:
+            - generic [ref=e48]: "4"
+            - generic [ref=e49]: Adherence
+        - paragraph [ref=e102]: Analyzing visit data...
+        - generic [ref=e87]:
+          - button "← Back" [ref=e103] [cursor=pointer]
+          - button "Continue as Patient →" [disabled] [ref=e104] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]:
+    - img [ref=e95]
+  - alert [ref=e98]

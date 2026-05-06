@@ -1,0 +1,127 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "Tab 2" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: Tab 2
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: PostVisit.ai
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: ✓
+            - generic [ref=e34]: Visit Summary
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: ✓
+            - generic [ref=e39]: Care Plan
+          - generic [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: ✓
+            - generic [ref=e44]: Patient Chat
+          - generic [ref=e47] [cursor=pointer]:
+            - generic [ref=e48]: "4"
+            - generic [ref=e49]: Adherence
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - generic [ref=e233]:
+              - heading "Adherence Tracker" [level=2] [ref=e234]
+              - paragraph [ref=e235]: Day 3 of 14 — Maria Santos's care plan
+            - generic [ref=e236]:
+              - generic [ref=e237]: 34%
+              - generic [ref=e238]: Overall Adherence
+          - generic [ref=e239]:
+            - heading "Weekly View" [level=3] [ref=e240]
+            - generic [ref=e241]:
+              - generic [ref=e242]: Task
+              - generic [ref=e243]: Day 1
+              - generic [ref=e244]: Day 2
+              - generic [ref=e245]: Day 3
+              - generic [ref=e246]: Day 4
+              - generic [ref=e247]: Day 5
+              - generic [ref=e248]: Day 6
+              - generic [ref=e249]: Day 7
+              - generic [ref=e250]: Lisinopril 10mg
+              - checkbox [checked] [ref=e252] [cursor=pointer]
+              - checkbox [checked] [ref=e254] [cursor=pointer]
+              - checkbox [checked] [ref=e256] [cursor=pointer]
+              - checkbox [ref=e258] [cursor=pointer]
+              - checkbox [ref=e260] [cursor=pointer]
+              - checkbox [ref=e262] [cursor=pointer]
+              - checkbox [ref=e264] [cursor=pointer]
+              - generic [ref=e265]: Metformin 500mg
+              - checkbox [checked] [ref=e267] [cursor=pointer]
+              - checkbox [checked] [ref=e269] [cursor=pointer]
+              - checkbox [checked] [ref=e271] [cursor=pointer]
+              - checkbox [ref=e273] [cursor=pointer]
+              - checkbox [ref=e275] [cursor=pointer]
+              - checkbox [ref=e277] [cursor=pointer]
+              - checkbox [ref=e279] [cursor=pointer]
+              - generic [ref=e280]: Amlodipine 5mg
+              - checkbox [checked] [ref=e282] [cursor=pointer]
+              - checkbox [checked] [ref=e284] [cursor=pointer]
+              - checkbox [checked] [ref=e286] [cursor=pointer]
+              - checkbox [ref=e288] [cursor=pointer]
+              - checkbox [ref=e290] [cursor=pointer]
+              - checkbox [ref=e292] [cursor=pointer]
+              - checkbox [ref=e294] [cursor=pointer]
+              - generic [ref=e295]: 30 min walk
+              - checkbox [checked] [ref=e297] [cursor=pointer]
+              - checkbox [ref=e299] [cursor=pointer]
+              - checkbox [ref=e301] [cursor=pointer]
+              - checkbox [ref=e303] [cursor=pointer]
+              - checkbox [ref=e305] [cursor=pointer]
+              - checkbox [ref=e307] [cursor=pointer]
+              - checkbox [ref=e309] [cursor=pointer]
+              - generic [ref=e310]: Log vitals
+              - checkbox [checked] [ref=e312] [cursor=pointer]
+              - checkbox [checked] [ref=e314] [cursor=pointer]
+              - checkbox [ref=e316] [cursor=pointer]
+              - checkbox [ref=e318] [cursor=pointer]
+              - checkbox [ref=e320] [cursor=pointer]
+              - checkbox [ref=e322] [cursor=pointer]
+              - checkbox [ref=e324] [cursor=pointer]
+          - generic [ref=e325]:
+            - heading "AI Nudges" [level=3] [ref=e326]
+            - paragraph [ref=e327]: Automated reminders the agent would send to Maria
+            - generic [ref=e328]:
+              - generic [ref=e329]:
+                - generic [ref=e330]: 💊
+                - generic [ref=e332]: Time for your evening Metformin
+                - generic [ref=e333]: 6:00 PM
+              - generic [ref=e334]:
+                - generic [ref=e335]: ❤️
+                - generic [ref=e337]: You haven't logged blood pressure today
+                - generic [ref=e338]: 2:30 PM
+              - generic [ref=e339]:
+                - generic [ref=e340]: 🎉
+                - generic [ref=e342]: Great job — 3 day streak on your walking goal!
+                - generic [ref=e343]: 10:00 AM
+        - generic [ref=e87]:
+          - button "← Back" [ref=e103] [cursor=pointer]
+          - button "Restart Demo" [active] [ref=e344] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]:
+    - img [ref=e95]
+  - alert [ref=e98]

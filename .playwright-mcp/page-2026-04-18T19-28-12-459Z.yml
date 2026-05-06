@@ -1,0 +1,138 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "EoL Triage Co-Pilot" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: EoL Triage Co-Pilot
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: EoL Triage Co-Pilot
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: "1"
+            - generic [ref=e34]: Morning Inbox
+          - generic [ref=e37]:
+            - generic [ref=e38]: "2"
+            - generic [ref=e39]: Comfort Care
+          - generic [ref=e42]:
+            - generic [ref=e43]: "3"
+            - generic [ref=e44]: 999 Crisis
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - heading "Good morning, Nurse Sarah Chen" [level=2] [ref=e47]
+            - paragraph [ref=e48]: 28 patients | 147 overnight alerts → 10 action cards
+            - generic [ref=e49]:
+              - generic [ref=e50]: 6 green
+              - generic [ref=e51]: 3 amber
+              - generic [ref=e52]: 1 red
+              - generic [ref=e53]: 1 no ACP
+          - generic [ref=e54]: 2/10 cards actioned
+          - generic [ref=e55]:
+            - generic [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]:
+                - generic [ref=e58]:
+                  - generic [ref=e59]: Harold Nyong'o, 89
+                  - generic [ref=e60]: Care Home
+                  - generic [ref=e61]: "ACP: no hospitalisation"
+                - paragraph [ref=e62]: "Family called 999 — patient unresponsive. ACP: DNACPR, do not hospitalise."
+              - generic [ref=e63]: Escalate Now →
+            - generic [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - generic [ref=e67]: Dorothy Fletcher, 82
+                  - generic [ref=e68]: Home
+                  - generic [ref=e69]: "ACP: comfort-focused"
+                - paragraph [ref=e70]: Pain score trending 3→6 over 4 days, declining appetite and mobility.
+              - generic [ref=e71]: Review →
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - generic [ref=e75]: William Okafor, 74
+                  - generic [ref=e76]: Care Home
+                  - generic [ref=e77]: "ACP: comfort-focused"
+                - paragraph [ref=e78]: "Weight +0.8kg over 3 days, increased breathlessness. ACP: comfort-focused."
+              - button "Review Care Plan" [ref=e79] [cursor=pointer]
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]:
+                  - generic [ref=e83]: Beatrice Dunn, 87
+                  - generic [ref=e84]: Home
+                  - generic [ref=e85]: No ACP
+                - paragraph [ref=e86]: Declining mobility, missed 2 check-ins. No ACP on file.
+              - button "Review Care Plan" [ref=e87] [cursor=pointer]
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - generic [ref=e91]: Joan Whitfield, 78
+                  - generic [ref=e92]: Home
+                  - generic [ref=e93]: "ACP: comfort-focused"
+                - paragraph [ref=e94]: All vitals within baseline.
+              - generic [ref=e146]: ✓ Done
+            - generic [ref=e96]:
+              - generic [ref=e97]:
+                - generic [ref=e98]:
+                  - generic [ref=e99]: Arthur Pemberton, 85
+                  - generic [ref=e100]: Care Home
+                  - generic [ref=e101]: "ACP: no hospitalisation"
+                - paragraph [ref=e102]: Morning check-in completed, no concerns.
+              - generic [ref=e147]: ✓ Done
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - generic [ref=e106]:
+                  - generic [ref=e107]: Elsie Macaulay, 91
+                  - generic [ref=e108]: Hospice at Home
+                  - generic [ref=e109]: "ACP: comfort-focused"
+                - paragraph [ref=e110]: Pain managed, sleeping well.
+              - button "Confirm Stable" [ref=e111] [cursor=pointer]
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - generic [ref=e114]:
+                  - generic [ref=e115]: Frank Osei, 76
+                  - generic [ref=e116]: Home
+                  - generic [ref=e117]: "ACP: comfort-focused"
+                - paragraph [ref=e118]: Responding well to new pain regime.
+              - button "Confirm Stable" [ref=e119] [cursor=pointer]
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Margaret Liu, 88
+                  - generic [ref=e124]: Care Home
+                  - generic [ref=e125]: "ACP: no hospitalisation"
+                - paragraph [ref=e126]: Weight and vitals consistent.
+              - button "Confirm Stable" [ref=e127] [cursor=pointer]
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - generic [ref=e131]: Robert Kapoor, 80
+                  - generic [ref=e132]: Home
+                  - generic [ref=e133]: "ACP: comfort-focused"
+                - paragraph [ref=e134]: Good appetite, mobile with frame.
+              - button "Confirm Stable" [ref=e135] [cursor=pointer]
+          - button "Continue to Dorothy Fletcher →" [ref=e149] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e141] [cursor=pointer]:
+    - img [ref=e142]
+  - alert [ref=e145]

@@ -1,0 +1,83 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img [ref=e6]:
+        - generic [ref=e8]: HP
+      - generic [ref=e10]:
+        - text: Hackathon
+        - superscript [ref=e11]: Practice
+    - navigation [ref=e12]:
+      - link "Home" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - text: Home
+      - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+        - /url: /tab-1
+        - text: PostVisit.ai
+      - link "Tab 2" [ref=e17] [cursor=pointer]:
+        - /url: /tab-2
+        - text: Tab 2
+      - link "Tab 3" [ref=e19] [cursor=pointer]:
+        - /url: /tab-3
+        - text: Tab 3
+      - link "Tab 4" [ref=e21] [cursor=pointer]:
+        - /url: /tab-4
+        - text: Tab 4
+      - link "Tab 5" [ref=e23] [cursor=pointer]:
+        - /url: /tab-5
+        - text: Tab 5
+  - generic [ref=e25]:
+    - banner [ref=e26]:
+      - generic [ref=e27]: PostVisit.ai
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: "1"
+          - generic [ref=e34]: Visit Summary
+        - generic [ref=e37]:
+          - generic [ref=e38]: "2"
+          - generic [ref=e39]: Care Plan
+        - generic [ref=e42]:
+          - generic [ref=e43]: "3"
+          - generic [ref=e44]: Patient Chat
+        - generic [ref=e47]:
+          - generic [ref=e48]: "4"
+          - generic [ref=e49]: Adherence
+      - generic [ref=e50]:
+        - heading "Doctor Visit Summary" [level=2] [ref=e51]
+        - paragraph [ref=e52]: Enter the patient visit details. Pre-filled with demo data for quick walkthrough.
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e55]: Patient Name
+            - textbox [ref=e56]: Maria Santos
+          - generic [ref=e57]:
+            - generic [ref=e58]: Age
+            - spinbutton [ref=e59]: "62"
+        - generic [ref=e60]:
+          - generic [ref=e61]: Diagnosis
+          - textbox [ref=e62]: Hypertension Stage 2, Type 2 Diabetes
+        - generic [ref=e63]:
+          - generic [ref=e64]: Medications
+          - generic [ref=e65]:
+            - textbox "Drug name" [ref=e66]: Lisinopril
+            - textbox "Dosage" [ref=e67]: 10mg
+            - textbox "Frequency" [ref=e68]: Once daily
+            - button "×" [ref=e69] [cursor=pointer]
+          - generic [ref=e70]:
+            - textbox "Drug name" [ref=e71]: Metformin
+            - textbox "Dosage" [ref=e72]: 500mg
+            - textbox "Frequency" [ref=e73]: Twice daily
+            - button "×" [ref=e74] [cursor=pointer]
+          - generic [ref=e75]:
+            - textbox "Drug name" [ref=e76]: Amlodipine
+            - textbox "Dosage" [ref=e77]: 5mg
+            - textbox "Frequency" [ref=e78]: Once daily
+            - button "×" [ref=e79] [cursor=pointer]
+          - button "+ Add Medication" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - generic [ref=e82]: Lifestyle Instructions
+          - textbox [ref=e83]: Low sodium diet, 30 min walking daily, monitor blood glucose before meals
+        - generic [ref=e84]:
+          - generic [ref=e85]: Follow-Up Date
+          - textbox [ref=e86]: 2026-05-02
+      - button "Generate Care Plan →" [ref=e88] [cursor=pointer]

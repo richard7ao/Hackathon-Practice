@@ -1,0 +1,104 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "HackathonPractice" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]:
+          - generic [ref=e8]: HP
+        - generic [ref=e10]:
+          - text: Hackathon
+          - superscript [ref=e11]: Practice
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: Home
+        - link "PostVisit.ai" [ref=e15] [cursor=pointer]:
+          - /url: /tab-1
+          - text: PostVisit.ai
+        - link "EoL Triage Co-Pilot" [ref=e17] [cursor=pointer]:
+          - /url: /tab-2
+          - text: EoL Triage Co-Pilot
+        - link "Tab 3" [ref=e19] [cursor=pointer]:
+          - /url: /tab-3
+          - text: Tab 3
+        - link "Tab 4" [ref=e21] [cursor=pointer]:
+          - /url: /tab-4
+          - text: Tab 4
+        - link "Tab 5" [ref=e23] [cursor=pointer]:
+          - /url: /tab-5
+          - text: Tab 5
+    - generic [ref=e25]:
+      - banner [ref=e26]:
+        - generic [ref=e27]: EoL Triage Co-Pilot
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: ✓
+            - generic [ref=e34]: Morning Inbox
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: ✓
+            - generic [ref=e39]: Comfort Care
+          - generic [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: "3"
+            - generic [ref=e44]: 999 Crisis
+        - generic [ref=e250]:
+          - generic [ref=e251]: URGENT — Harold Nyong'o, 89, Meadowbank Care Home. Family called 999 — patient unresponsive. Ambulance dispatched (Cat 2).
+          - button "← Back to dashboard" [ref=e252] [cursor=pointer]
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - heading "Patient Context" [level=3] [ref=e255]
+              - generic [ref=e256]:
+                - generic [ref=e257]: "Name: Harold Nyong'o, 89"
+                - generic [ref=e258]:
+                  - generic [ref=e259]: "Setting:"
+                  - text: Meadowbank Care Home
+                - generic [ref=e260]:
+                  - generic [ref=e261]: "Diagnosis:"
+                  - text: Advanced dementia, heart failure NYHA IV, frailty score 8/9
+                - generic [ref=e262]:
+                  - generic [ref=e263]: "ACP:"
+                  - text: "DNACPR, do not hospitalise, preferred place of death: care home. Reviewed 6 weeks ago with daughter (NOK)."
+                - generic [ref=e264]:
+                  - generic [ref=e265]: "Medications:"
+                  - generic [ref=e266]: Oral morphine 2.5mg (PRN)
+                  - generic [ref=e267]: Hyoscine patches 1mg/72hr (Every 3 days)
+                  - generic [ref=e268]: Midazolam 2.5mg (PRN)
+                - generic [ref=e269]: On end-of-life care pathway since 2 weeks ago
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - heading "What Happened" [level=3] [ref=e272]
+                - generic [ref=e273]:
+                  - generic [ref=e274]:
+                    - generic [ref=e275]: 09:47
+                    - generic [ref=e277]: "Morning check-in: not completed (patient non-responsive)"
+                  - generic [ref=e278]:
+                    - generic [ref=e279]: 09:52
+                    - generic [ref=e281]: Care home staff noted reduced consciousness, called daughter
+                  - generic [ref=e282]:
+                    - generic [ref=e283]: 10:03
+                    - generic [ref=e285]: Daughter called 999 in distress
+                  - generic [ref=e286]:
+                    - generic [ref=e287]: 10:05
+                    - generic [ref=e289]: Ambulance dispatched (Category 2)
+              - generic [ref=e290]:
+                - generic [ref=e291]: Co-Pilot Assessment — URGENT
+                - paragraph [ref=e292]: "Patient is on an active end-of-life pathway with DNACPR and do-not-hospitalise in place. Reduced consciousness is consistent with expected end-of-life trajectory for advanced dementia + heart failure. Ambulance dispatch may conflict with ACP wishes. Recommend: share ACP with ambulance service, support family through expected decline, dispatch palliative nurse for comfort assessment."
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - generic [ref=e295]:
+                    - 'heading "Approve: Share ACP with ambulance service" [level=4] [ref=e296]'
+                    - button "Approve" [ref=e297] [cursor=pointer]
+                  - generic [ref=e298]: "Re: Harold Nyong'o, DOB 15/08/1936, Meadowbank Care Home. Active DNACPR and advance care plan — do not hospitalise, comfort care only. Patient on end-of-life pathway (2 weeks). Current presentation consistent with expected decline. Please review dispatch. Community palliative team attending. Contact: Nurse Sarah Chen, 07700 900123."
+                - generic [ref=e299]:
+                  - generic [ref=e300]:
+                    - 'heading "Approve: Call daughter" [level=4] [ref=e301]'
+                    - button "Approve" [ref=e302] [cursor=pointer]
+                  - generic [ref=e303]: Mrs. Nyong'o, this is Sarah from the nursing team. I understand this is very frightening. Your father's care plan, which you helped put in place, says he should stay at Meadowbank where he's comfortable. I'm sending a nurse to assess him now and I'd like to talk you through what's happening.
+                - generic [ref=e304]:
+                  - generic [ref=e305]:
+                    - 'heading "Approve: Dispatch palliative nurse" [level=4] [ref=e306]'
+                    - button "Approve" [ref=e307] [cursor=pointer]
+                  - generic [ref=e308]: Urgent comfort assessment — Harold Nyong'o, Meadowbank Care Home. Reduced consciousness, end-of-life pathway. Family distressed. Assess comfort, administer PRN if needed, support care home staff and family on-site.
+  - button "Open Next.js Dev Tools" [ref=e141] [cursor=pointer]:
+    - img [ref=e142]
+  - alert [ref=e145]
